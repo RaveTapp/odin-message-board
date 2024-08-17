@@ -5,7 +5,7 @@
     <li>
       <p>
         <i><%= messages[i].text %></i> from <span> <%= messages[i].user %> at </span><%=
-        messages[i].added %>
+        messages[i].added %> <a href="/messages/<%= i %>">open</a>
       </p>
     </li>
     <% } %>

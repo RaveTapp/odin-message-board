@@ -14,6 +14,8 @@ const messages = [
   },
 ];
 
+
+
 indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Mini Messageboard", messages: messages });
 });
@@ -26,6 +28,10 @@ indexRouter.post("/new", (req, res) => {
   messages.push({ text: req.body.msg, user: req.body.author, added: new Date() });
   res.redirect("/");
 });
+
+indexRouter.get("/message/:id", (req, res) => {
+  res.render("open", {message: messages[req.params.id]});
+})
 
 
 module.exports = indexRouter;
